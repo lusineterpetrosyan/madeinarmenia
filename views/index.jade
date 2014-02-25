@@ -1,0 +1,11 @@
+extends layout
+
+block content  
+  h1 Start Ups
+  ul
+    for startup in startups
+      for startupIn in startup
+        h1=startupIn.title        
+
+    else
+      li sorry, no books!
