@@ -1,7 +1,3 @@
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , routes = require('./routes')
   , https = require('http')
@@ -44,8 +40,6 @@ app.get('/', function(request, response) {
 		response.render(__dirname + '/views/index.jade', {
 		        startups: [body.result]
 		});
-
-
 	});
 
 });
