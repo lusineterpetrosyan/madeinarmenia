@@ -1,10 +1,11 @@
 !function ($) {
     $(function(){
-    	$(".create").click(function(){
-    		var company = $("input").attr("name"),
-    			url = $("input").attr("name")
+    	$("#submit").click(function(){
+    		var company = $("input").attr("name")
+                , email = $("input").attr("email")
+                , url = $("input").attr("url")
     		$.when(                                                      
-                  $.get("/create/"+company+"/", function(data) {
+                  $.get("/create/"+company+"/"+email+"/"+url+"/", function(data) {
 
                     }
                   })

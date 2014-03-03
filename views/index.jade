@@ -6,7 +6,7 @@ block content
     for startup in startups
       for startupIn in startup
         h1=startupIn.title
-        a(href="http://"+startupIn.body.url, target="_blank") hello     
+        a(href="http://"+startupIn.body.url, target="_blank") Visit Us     
         h3=startupIn.body.founders
         h3=startupIn.body.city
 
@@ -18,9 +18,12 @@ block content
     h2 Add Company 
     div
       label Company Name: 
-      input(type='text', name='first_name')
+      input(type='text', name='name')
     div
       label Email Address:
-      input(type='text', name='email_address')
+      input(type='text', name='email')
     div
-      button Submit
+      label Page url:
+      input(type='text', name='url')
+    div
+      button(id="submit") Submit

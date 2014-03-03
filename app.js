@@ -43,14 +43,16 @@ app.get('/', function(request, response) {
 });
 
 
-app.get('/create/:name/:url/', function(request, response) {	
-	var name = request.par("name"), url = request.par("url");
+app.get('/create/:name/:/email/:url/', function(request, response) {	
+	var name = request.par("name")
+		,email = request.par("email")
+		,url = request.par("url");
 
 	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
 			  "data":{
 				"token":"123456",
 				"query":{},
-				"request":"read"
+				"request":"create"
 			}
 		}, function(err, resp, body){  		
 		response.send(resp);		
