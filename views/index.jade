@@ -1,9 +1,7 @@
 extends layout
 
 block content  
-  h1  We'll be coming soon
-  button(id="join") Join us
- 
+
   ul
     for startup in startups
       for startupIn in startup
@@ -14,3 +12,15 @@ block content
 
     else
       li sorry, no startups!
+
+
+  div(id="addCompany")
+    h2 Add Company 
+    div
+      label Company Name: 
+      input(type='text', name='first_name')
+    div
+      label Email Address:
+      input(type='text', name='email_address')
+    div
+      button Submit

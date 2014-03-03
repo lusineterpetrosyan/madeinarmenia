@@ -27,22 +27,37 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(request, response) {	
-
 	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
 			  "data":{
 				"token":"123456",
-				"query":{},			
-			    "request":"read"
+				"query":{},
+				"request":"read"
 			}
 		}, function(err, resp, body){  		
-		
-		console.log(body.result[0].title);
+
+		// console.log(body.result[0].title);
 		response.render(__dirname + '/views/index.jade', {
 		        startups: [body.result]
 		});
 	});
-
 });
+
+
+app.get('/create/:name/:url/', function(request, response) {	
+	var name = request.par("name"), url = request.par("url");
+
+	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
+			  "data":{
+				"token":"123456",
+				"query":{},
+				"request":"read"
+			}
+		}, function(err, resp, body){  		
+		response.send(resp);		
+	});
+});
+
+
 
 app.get('/:id', routes.startup);
 
