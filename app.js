@@ -41,23 +41,50 @@ app.get('/', function(request, response) {
 		});
 	});
 });
-
-
-app.get('/create/:name/:/email/:url/', function(request, response) {	
-	var name = request.par("name")
-		,email = request.par("email")
-		,url = request.par("url");
+app.get('/create/:name/:email/:url/:city/', function(request, response) {
+	var companyName = request.params.name,
+		email = request.params.email,
+		url = request.params.url;
+		city = request.params.city;
 
 	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
-			  "data":{
-				"token":"123456",
-				"query":{},
-				"request":"create"
-			}
-		}, function(err, resp, body){  		
-		response.send(resp);		
-	});
+			  "data":
+			  { "token" : "123456"
+			    ,"request" : "create"
+			    ,"model": {
+			      "title":companyName
+			      ,"body":{
+			        "email": email
+			        ,"url": url
+			        ,"city":city
+			      }
+			      ,"group": "submissions"
+			    }
+			  }
+}, function(err, resp, body){ 
+			console.log(body); 		
+			response.send(body);		
+		});
 });
+
+// app.get('/create/:name/:/email/:url', function(request, response) {	
+// 	var name = request.params("name")
+// 		,email = request.params("email")
+// 		,url = request.params("url");
+		
+// 		console.log("name")
+
+
+// 	// req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
+// 	// 		  "data":{
+// 	// 			"token":"123456",
+// 	// 			"query":{},
+// 	// 			"request":"create"
+// 	// 		}
+// 	// 	}, function(err, resp, body){  		
+// 	// 	response.send(resp);		
+// 	// });
+// });
 
 
 
