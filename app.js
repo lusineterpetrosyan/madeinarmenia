@@ -67,26 +67,6 @@ app.get('/create/:name/:email/:url/:city/', function(request, response) {
 		});
 });
 
-// app.get('/create/:name/:/email/:url', function(request, response) {	
-// 	var name = request.params("name")
-// 		,email = request.params("email")
-// 		,url = request.params("url");
-		
-// 		console.log("name")
-
-
-// 	// req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
-// 	// 		  "data":{
-// 	// 			"token":"123456",
-// 	// 			"query":{},
-// 	// 			"request":"create"
-// 	// 		}
-// 	// 	}, function(err, resp, body){  		
-// 	// 	response.send(resp);		
-// 	// });
-// });
-
-
 
 app.get('/:id', routes.startup);
 

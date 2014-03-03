@@ -20,6 +20,8 @@
             .then(function() {                    
             });
     	});
+
+
         $(".add_founder").click(function(){
             add_founder();
         }); var add_founder = function(){
@@ -35,11 +37,9 @@
                 $('.founder_input').val("");
             };
 
-        $(".remove_founder").click(function(){
-            remove_founder();
-        }); var remove_founder = function(e){
-                $(e.currentTarget).parent().remove();
-            }
+        $(".remove_founder").click(function(){            
+            $(this).parent().remove();
+        }); 
     });
 
 }(window.jQuery)
