@@ -2,7 +2,7 @@
     $(function(){
     	$(".submit").click(function(){
             console.log("foo");
-    		var company = $("input[name='name']").val()
+    		var company = $("input[name='cName']").val()
                 , email = $("input[name='email']").val()
                 , url = $("input[name='url']").val()
                 , city = $("input[name='city']").val();

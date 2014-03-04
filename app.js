@@ -41,11 +41,12 @@ app.get('/', function(request, response) {
 		});
 	});
 });
-app.get('/create/:name/:email/:url/:city/', function(request, response) {
-	var companyName = request.params.name,
+app.get('/create/:cName/:email/:url/:city/:founders/', function(request, response) {
+	var companyName = request.params.cName,
 		email = request.params.email,
-		url = request.params.url;
-		city = request.params.city;
+		url = request.params.url,
+		city = request.params.city,
+		founders = founders;
 
 	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
 			  "data":
@@ -57,8 +58,9 @@ app.get('/create/:name/:email/:url/:city/', function(request, response) {
 			        "email": email
 			        ,"url": url
 			        ,"city":city
+			        ,"founders": founders
 			      }
-			      ,"group": "submissions"
+			      ,"group": "startup"
 			    }
 			  }
 }, function(err, resp, body){ 
