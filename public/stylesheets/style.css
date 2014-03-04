@@ -1,4 +1,229 @@
-body {	
-	background-color: #efefef;
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+@import url("stylesheet.css") screen and (max-device-width: 2048px) and (min-device-width: 1425px);
+
+h1,h2,h3,h4,h5,p,button,a,ul,li{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	text-decoration: none;	
+
 }
 
+a {
+color: #ce2d19;
+text-decoration: none;
+}
+
+header{
+	height: 312px;
+	width: 100%;
+	 background: url(/img/phone.jpg) no-repeat center center fixed; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  position: relative;
+}
+
+.shade{
+	background-color: rgba(0,0,0,0.3);
+	width: 60%;
+	height: 312px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.shade h1{
+	width: 354px;
+	height: 77px;
+	overflow: hidden;
+	text-indent: -999999em;
+	background-image: url(/img/logo.png);
+
+	position: absolute;
+	top: 100px;
+	right: 70px;
+
+}
+
+.shade h2{
+
+	position: absolute;
+	bottom: 20px;
+	right: 70px;
+	color: white;
+	font-size: 20px;
+	font-weight: 300
+}
+
+nav{
+	position: absolute;
+	right: 12px;
+	top: 11px;
+}
+
+.list{
+	border: 0px;
+	width: 17px;
+	height: 14px;
+	background: url('/img/list.png');
+	display: inline-block;
+	overflow: hidden;
+	text-indent: 999999em;
+
+}
+
+
+.grid{
+	margin-left: 8px;
+	border: 0px;
+	width: 14px;
+	height: 14px;
+	background: url('/img/grid.png');
+	display: inline-block;
+	overflow: hidden;
+	text-indent: 999999em;
+
+}
+
+.joinblock {
+	width: 180px;
+	height: 47px;
+	position: absolute;
+	top: 130px;
+	right: -250px;
+}
+
+.joinblock img {
+	position: absolute;
+	margin: 13px 0px 13px 0px;
+
+	
+ }
+
+
+.joinblock button {
+	position: absolute;
+	border: solid 1px #a07958;
+	border-radius: 30px;
+	background: none;
+	margin-left: 25px;
+	margin-top: 0;
+	width: 150px;
+	height: 47px;
+	color: #fff;
+	font-size: 15px;
+}
+
+.joinblock button:hover {
+	border: solid 1px #fff;
+
+}
+
+img.joinblock{
+	margin: 0 auto;
+}
+
+.company {
+padding: 50px 0;
+max-height: 130px;
+border: 1px solid #ccc;
+border-top: 0;
+margin-left: -1px;
+position: relative;
+display: block;
+}
+
+.company:hover {
+box-shadow: inset 0 0 12px #e2e2e2;
+-moz-box-shadow: inset 0 0 12px #e2e2e2;
+-webkit-box-shadow: inset 0 0 12px #e2e2e2;
+}
+
+
+ul {
+list-style: none;
+}
+
+.company img {
+vertical-align: middle;
+max-width: 330px;
+display: inline-block;
+}
+
+img, a img {
+border: 0;
+vertical-align: bottom;
+}
+
+* {
+margin: 0;
+padding: 0;
+outline: 0;
+}
+
+article {
+background: #fff;
+display: block;
+}
+
+article ul {
+max-width: none;
+min-width: 0px;
+padding-left: 1px;
+margin: 0 auto;
+overflow: hidden;
+}
+
+article ul li {
+	text-align: center;
+	line-height: 130px;
+	position: relative;
+	float: left;
+	max-width: 480px;
+}
+
+/*if statement if screen and min-width equals 1425*/
+@media screen and (max-width: 670px) {
+	article ul li {
+		width: 100%;
+		max-width: 100%;
+	}  
+}
+
+@media screen and (min-width: 670px) {
+	article ul li {
+		width: 50%;
+	}  
+}
+
+@media screen and (min-width: 880px) and (max-width : 1500px)  {
+	article ul li {
+		width: 33.3333333%;
+	}  
+}
+
+@media screen and (min-width: 1500px) {
+	article ul li {		
+		width: 25%;		
+	}  
+}
+
+
+.hiring {
+top: 0;
+right: 1px;
+width: 81px;
+height: 41px;
+position: absolute;
+}
+
+.hiring img {
+vertical-align: top;
+display: inline-block;
+}
