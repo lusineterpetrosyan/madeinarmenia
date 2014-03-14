@@ -35,38 +35,35 @@ app.get('/', function(request, response) {
 			}
 		}, function(err, resp, body){  		
 
-		// console.log(body.result[0].title);
+		console.log("sdaf",body.result[0].title);
 		response.render(__dirname + '/views/index.jade', {
-		        startups: [body.result]
+		    startups: [body.result]
 		});
+
 	});
 });
-app.get('/create/:cName/:email/:url/:city/:founders/', function(request, response) {
-	var companyName = request.params.cName,
-		email = request.params.email,
-		url = request.params.url,
-		city = request.params.city,
-		founders = founders;
-
+app.post('/create', function(request, response) {
+	console.log(request.body);
+ 
 	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
 			  "data":
 			  { "token" : "123456"
 			    ,"request" : "create"
 			    ,"model": {
-			      "title":companyName
+			      "title": request.body.title
 			      ,"body":{
-			        "email": email
-			        ,"url": url
-			        ,"city":city
-			        ,"founders": founders
+			        "email": request.body.email
+			        ,"url": request.body.url
+			        ,"city": request.body.city
+			        ,"founders": request.body.foundersAr
 			      }
 			      ,"group": "startup"
 			    }
 			  }
-}, function(err, resp, body){ 
-			console.log(body); 		
-			response.send(body);		
-		});
+	}, function(err, resp, body){ 
+		console.log(body); 		
+		response.send(body);		
+	});
 });
 
 

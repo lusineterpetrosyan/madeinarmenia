@@ -1,65 +1,39 @@
-doctype html
 html
 	head
-		<title> armenia </title>
+		title armenia
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(type="text/JavaScript",src="/javascripts/jq.js")
-		script(type="text/JavaScript",src="/javascripts/app.js") 
+		script(type="text/JavaScript",src="/javascripts/app.js")
+		
 
 	body
-		
 		header
 			div(class="shade")
 				h1 Made In Armenia
 				h2 a collection of tech companies made in 
-					span( style="color: #d1d1d1") armenia 
-				
-				
+					span( style="color: #d1d1d1") armenia 		
 
 				div(class="joinblock")
 					img(src="/img/check.png")
-					button Join Us
-				
-			
+					button(class="join submit") Join Us
 			nav
 				button(class="list") List View
 				button(class="grid") Grid View
-			
-		article
-			ul
-				li 
-					a(href="http://google.com" class="company")
-						img(src="/img/skype.png")
-					a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
-						img(src="/img/hiring.png")
-					
-				li
-					a(href="http://yahoo.com" class="company")
-						img(src="/img/amazon.jpg")
-						
-					a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
-						img(src="/img/hiring.png")
-				li 
-					a(href="http://hotmail.com" class="company")
-						img(src="/img/google.jpg")
-					
-				li 
-					a(href="http://skype.com" class="company")
-						img(src="/img/sam.png")
-						
-				li 
-					a(href="http://msn.com" class="company")
-						img(src="/img/logob.jpg")
-						
-				li 
-					a(href="http://apple.com" class="company")
-						img(src="/img/logob.jpg")
-				
-				li 
-					a(href="http://gmail.com" class="company")
-						img(src="/img/logob.jpg")
-				
-				li 
-					a(href="http://gmail.com" class="company")
-						img(src="/img/logob.jpg")
+
+			div(id="form" class="form")
+				button(class="close") X
+				h2 Add Company
+				label Company Name: 
+					input(type='text', name='cName')
+				label Email Address:
+					input(type='text', name='email')
+				label Page url:
+					input(type='text', name='url')
+				label City:
+					input(type='text', name='city')
+				label Founders:</label>
+					input(type='text' class='founder_input' class='input')
+					button(class="add_founder") Add
+					ul(class="founders")
+		block content

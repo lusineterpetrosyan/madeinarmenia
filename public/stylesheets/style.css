@@ -105,6 +105,14 @@ nav{
 
 	
  }
+ .form {
+ 	background-color: red;
+	width: 60%;
+	height: 312px;
+	position: absolute;
+	top: 0px;
+	left: -60%;
+ }
 
 
 .joinblock button {
