@@ -1,97 +1,99 @@
-var submit = false;
-$(document).ready(function(){
-    
-    $('.list').click(function(e){
-        e.preventDefault();     
-        console.log('class listView added');
-        $('li').removeClass('gridView');
-        $('li').addClass('listView');
-    });
-    $('.grid').click(function(){
-        $('li').removeClass('listView');
-        $('li').addClass('gridView');
-    });
+var app = app || {};
 
-    $('.join').click(function(){
-        $('#form')
-            .animate({'margin-left':'60%'},1000, function(){
-                submit = true;
-                console.log("open",submit)
-            });
-        $(this)
+app.Home = Backbone.View.extend({
+    el: $('body'), 
+    events: {
+        'click .join': 'openForm'
+      , 'click .submit': 'submitForm'
+      , 'click .close': 'closeForm'
+      , 'click .add_founder': 'add_founder'
+    },
+    initialize: function(){
+        _.bindAll(this, 'render', 'openForm','submitForm','closeForm');
+        this.render();
+    },    
+    render: function(){
+             
+    },    
+    openForm: function(e){
+      console.log("sss");
+       this.$('#form')
+        .animate({'margin-left':'60%'},1000, function(){
+            submit = true;
+            console.log("open",submit)
+        });
+        $(e.currentTarget)
+            .removeClass("join")
+            .addClass("submit")
             .html("Submit");
-        
-    }); //join click
-
-    $('.close').click(function(){
-        submit = false;
-        console.log("close",submit)
-        $('#form')
-            .animate({'margin-left':'-60%'},1000);
-        $('.submit')
-            .html("Join Us");
-        return false;
-    });
-
-    if(submit==true){
-        console.log("1",submit);
-        
-        $(".add_founder").click(function(){
-            if ($('.founder_input').val().length>2){
-                $(".founders").append(
-                    "<li><h3>"+$('.founder_input').val()+"</h3><button class='remove_founder'>-</button></li>"
-                );
-            }
-            else{
-                $('.founder_input').attr("placeholder","please add more shit");
-            }
-            $('.founder_input').val("");            
-            $(".remove_founder").click(function(){              
-                $(this).parent().remove();
-            });
+    },
+    submitForm: function(e){      
+        console.log("submit clicked")
+        console.log("2",submit);
+        var title = $("input[name='cName']").val()
+            , email = $("input[name='email']").val()
+            , url = $("input[name='url']").val()
+            , city = $("input[name='city']").val();
+            
+        var founders = [];
+        this.$(".founders li").each(function(){
+            founders.push($(this).children("h3").html());
         });
-
-        $(".submit").click(function(){
-            console.log("2",submit);
-            var title = $("input[name='cName']").val()
-                , email = $("input[name='email']").val()
-                , url = $("input[name='url']").val()
-                , city = $("input[name='city']").val();
-                
-            var founders = [];
-            $(".founders li").each(function(){
-                founders.push($(this).children("h3").html());
+        if((title.length>3)&&(email.length>3)&&(url.length>3)&&(city.length>3)){
+            $.when(                                                      
+                $.post("/create",
+                    {
+                        "title":title,
+                        "city":city,
+                        "email":email,
+                        "url":url,
+                        "founders":founders
+                    },  function(data) {
+                        console.log(data)
+                 })
+                )
+            .then(function() {
+                $(e.currentTarget)
+                    .removeClass("submit")
+                    .addClass("join")            
+                    .html("Join");
+                $('#form')
+                    .html("Thanks FOr submitting")
+                    .delay(2000)
+                    .animate({'margin-left':'-60%'},1000);
             });
-            if((title.length>3)&&(email.length>3)&&(url.length>3)&&(city.length>3)){
-                $.when(                                                      
-                    $.post("/create",
-                        {
-                            "title":title,
-                            "city":city,
-                            "email":email,
-                            "url":url,
-                            "founders":founders
-                        },  function(data) {
-                            console.log(data)
-                     })
-                    )
-                .then(function() {
-                    console.log("3",submit);
-                    $('#form')
-                        .html("Thanks FOr submitting")
-                        .delay(2000)
-                        .animate({'margin-left':'-60%'},1000);
-                    $('.submit').html("Join Us");
-
-                    submit = false;     
-                    console.log("4",submit);
-                });
-            }else{
-                submit=false;
-                alert("please complete the form")
-            }    
-        });
+        } else {
+            submit=false;
+            alert("please complete the form")
+        } 
+    },
+    closeForm: function(e){                      
+      this.$('#form')
+        .animate({'margin-left':'-60%'},1000);        
+      this.$(".submit")
+        .removeClass("submit")
+        .addClass("join")            
+        .html("Join");
+    },
+    add_founder: function(e){                      
+      if (this.$('.founder_input').val().length>2){
+          this.$(".founders").append(
+              "<li><h3>"+this.$('.founder_input').val()+"</h3><button class='remove_founder'>-</button></li>"
+          );
+      }
+      else{
+          this.$('.founder_input').attr("placeholder","please add more shit");
+      }
+      this.$('.founder_input').val("");            
+      this.$(".remove_founder").click(function(){              
+          $(this).parent().remove();
+      });
     }
 
+
+
 });
+
+new app.Home();
+
 

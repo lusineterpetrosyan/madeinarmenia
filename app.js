@@ -10,7 +10,9 @@ var express = require('express')
 // all environments
 app.set('port', process.env.PORT || 5000);
 app.set('views', __dirname + '/views');
+// app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'jade');
+// app.use(express.static());
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -27,47 +29,48 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(request, response) {	
-	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
-			  "data":{
-				"token":"123456",
-				"query":{},
-				"request":"read"
-			}
-		}, function(err, resp, body){  		
+	
+	// response.render(__dirname + '/views/index.html');
 
-		console.log("sdaf",body.result[0].title);
+	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
+		  "data":{
+			"token":"123456",
+			"query":{},
+			"request":"read"
+		}
+	}, function(err, resp, body){  		
+		console.log(body.result[0].title);
 		response.render(__dirname + '/views/index.jade', {
+		// response.render(__dirname + '/views/index.html', {
 		    startups: [body.result]
 		});
 
 	});
 });
+
 app.post('/create', function(request, response) {
 	console.log(request.body);
  
 	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
-			  "data":
-			  { "token" : "123456"
-			    ,"request" : "create"
-			    ,"model": {
-			      "title": request.body.title
-			      ,"body":{
-			        "email": request.body.email
-			        ,"url": request.body.url
-			        ,"city": request.body.city
-			        ,"founders": request.body.foundersAr
-			      }
-			      ,"group": "startup"
-			    }
-			  }
+	  "data":
+	  { "token" : "123456"
+	    ,"request" : "create"
+	    ,"model": {
+	      "title": request.body.title
+	      ,"body":{
+	        "email": request.body.email
+	        ,"url": request.body.url
+	        ,"city": request.body.city
+	        ,"founders": request.body.foundersAr
+	      }
+	      ,"group": "startup"
+	    }
+	  }
 	}, function(err, resp, body){ 
 		console.log(body); 		
 		response.send(body);		
 	});
 });
-
-
-app.get('/:id', routes.startup);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
