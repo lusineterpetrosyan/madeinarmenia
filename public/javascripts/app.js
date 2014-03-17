@@ -6,6 +6,7 @@ app.Home = Backbone.View.extend({
         'click .join': 'openForm'
       , 'click .submit': 'submitForm'
       , 'click .close': 'closeForm'
+      , 'submit form': "fileUpload"
       , 'click .add_founder': 'add_founder'
     },
     initialize: function(){
@@ -14,8 +15,28 @@ app.Home = Backbone.View.extend({
     },    
     render: function(){
              
-    },    
-    openForm: function(e){
+    },fileUpload : function(e){
+                
+      e.preventDefault();
+      var formData = new FormData(this.$("form")[0]);
+       
+      $.ajax({
+          url: 'https://dev-madeinyerevan.lsq.io/file/aws/upload',
+          type: 'POST',
+          data: formData,
+          async: false,
+          cache: false,
+          contentType: false,
+          processData: false,
+          success: function (returndata) {
+            console.log("image upload clicked");
+            var returndata = JSON.parse(returndata);
+            if (returndata.filename.length > 2){
+                that.$("#logos").html('<img src="https://dev-madeinyerevan.lsq.io/file/aws/upload/'+returndata.filepath+'" data-filename="'+returndata.filename+'">');
+              }
+          }
+      });
+    },openForm: function(e){
       console.log("sss");
        this.$('#form')
         .animate({'margin-left':'60%'},1000, function(){
@@ -26,14 +47,14 @@ app.Home = Backbone.View.extend({
             .removeClass("join")
             .addClass("submit")
             .html("Submit");
-    },
-    submitForm: function(e){      
+    },submitForm: function(e){      
         console.log("submit clicked")
         console.log("2",submit);
         var title = $("input[name='cName']").val()
             , email = $("input[name='email']").val()
             , url = $("input[name='url']").val()
-            , city = $("input[name='city']").val();
+            , city = $("input[name='city']").val()
+            , logo = ($("#logos img").attr("src"));
             
         var founders = [];
         this.$(".founders li").each(function(){
@@ -47,7 +68,8 @@ app.Home = Backbone.View.extend({
                         "city":city,
                         "email":email,
                         "url":url,
-                        "founders":founders
+                        "founders":founders,
+                        "logo" : logo
                     },  function(data) {
                         console.log(data)
                  })

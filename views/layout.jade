@@ -30,10 +30,15 @@ html
 					input(type='text', name='url')
 				label City:
 					input(type='text', name='city')
-				label Founders:</label>
+				label Founders:
 					input(type='text' class='founder_input' class='input')
 					button(class="add_founder") Add
 					ul(class="founders")
+				form
+					label Logo
+						input(input type="file" name="file" id="file")
+						input(type="submit" name="submit" value="Upload Logo")
+				div(id="logos")
 		block content
 
 

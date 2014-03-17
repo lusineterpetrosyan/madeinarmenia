@@ -62,8 +62,9 @@ app.post('/create', function(request, response) {
 	        ,"url": request.body.url
 	        ,"city": request.body.city
 	        ,"founders": request.body.foundersAr
+	        ,"logo": request.body.logo
 	      }
-	      ,"group": "startup"
+	      ,"group": "submissions"
 	    }
 	  }
 	}, function(err, resp, body){ 
