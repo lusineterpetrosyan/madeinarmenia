@@ -64,7 +64,7 @@ app.post('/create', function(request, response) {
 	        ,"founders": request.body.foundersAr
 	        ,"logo": request.body.logo
 	      }
-	      ,"group": "submissions"
+	      ,"group": "submission"
 	    }
 	  }
 	}, function(err, resp, body){ 

@@ -55,6 +55,10 @@ app.Home = Backbone.View.extend({
             , url = $("input[name='url']").val()
             , city = $("input[name='city']").val()
             , logo = ($("#logos img").attr("src"));
+            $("input[name='cName']").val('');
+            $("input[name='email']").val('');
+            $("input[name='url']").val('');
+            $("input[name='city']").val('');
             
         var founders = [];
         this.$(".founders li").each(function(){
@@ -80,10 +84,11 @@ app.Home = Backbone.View.extend({
                     .addClass("join")            
                     .html("Join");
                 $('#form')
-                    .html("Thanks FOr submitting")
                     .delay(2000)
                     .animate({'margin-left':'-60%'},1000);
+                    alert("Thanks for submitting")
             });
+
         } else {
             submit=false;
             alert("please complete the form")
