@@ -19,7 +19,7 @@ app.Home = Backbone.View.extend({
     },closeForm: function(e){                      
       this.$('#form')
         .animate({'margin-left':'-60%'},1000); 
-        $(".join").html("Apply");
+        $(".join").html("More");
         $(".span").removeClass("hide");
       // this.$(".submit")
       //   .removeClass("submit")
