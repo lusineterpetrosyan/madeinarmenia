@@ -1,12 +1,13 @@
 .form{
 
-	background-color: #ae4c4c;
+	letter-spacing: 1px;
+	font-size: 15px;
+	float: right;
 	width: 60%;
-	height: 312px;
-	position: absolute;
-	z-index: 3;
-	top: 0px;
-	left: 0px;
+    margin-top: 30px;
+    margin-right: 40px;
+    color: #fff;
+    line-height: 1.3em;
 }
 
 
@@ -47,7 +48,7 @@
  	width: 70px;
  	height: 35px;
  	left: 10px;
- 	top: 277px;
+ 	top: 250px;
  	border: none;
  }
 

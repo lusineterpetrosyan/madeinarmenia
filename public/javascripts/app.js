@@ -18,22 +18,25 @@ app.Home = Backbone.View.extend({
              
     },closeForm: function(e){                      
       this.$('#form')
-        .animate({'margin-left':'-60%'},1000);        
+        .animate({'margin-left':'-60%'},1000); 
+        $(".join").html("Apply");
+        $(".span").removeClass("hide");
       // this.$(".submit")
       //   .removeClass("submit")
       //   .addClass("join")            
       //   .html("Join");
     },openForm: function(e){
       console.log("sss");
-       this.$('#form')
-        .animate({'margin-left':'0%'},1000, function(){
+       this.$('#form').animate({'margin-left':'0%'},1000, function(){
            // submit = true;
             //console.log("open",submit)
+            $(".join").html("Apply");
+            $(".span").addClass("hide");
         });
         $(e.currentTarget)
             //.removeClass("join")
             //.addClass("submit")
-            .html("Submit");
+            //.html("Submit");
     }
 
     // fileUpload : function(e){
