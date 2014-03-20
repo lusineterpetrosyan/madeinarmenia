@@ -16,22 +16,24 @@ app.Home = Backbone.View.extend({
     },    
     render: function(){
              
-    },closeForm: function(e){                      
-      this.$('#form')
-        .animate({'margin-left':'-60%'},1000); 
-        $(".join").html("More");
-        $(".span").removeClass("hide");
+    },closeForm: function(e){
+      $(".span").removeClass("hide").delay(1000);
+      $(".join").html("More");                      
+      this.$('#form').animate({'margin-left':'-60%'},1000); 
+      
+        
       // this.$(".submit")
       //   .removeClass("submit")
       //   .addClass("join")            
       //   .html("Join");
     },openForm: function(e){
-      console.log("sss");
-       this.$('#form').animate({'margin-left':'0%'},1000, function(){
+        console.log("sss");
+        $(".join").html("Apply");
+        $(".span").addClass("hide");
+        this.$('#form').animate({'margin-left':'0%'},1000, function(){
            // submit = true;
             //console.log("open",submit)
-            $(".join").html("Apply");
-            $(".span").addClass("hide");
+            
         });
         $(e.currentTarget)
             //.removeClass("join")
