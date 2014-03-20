@@ -1,10 +1,11 @@
 .form{
 
 	letter-spacing: 1px;
+	background-color: rgba(0,0,0,0.3);
 	font-size: 15px;
 	float: right;
 	width: 60%;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-right: 40px;
     color: #fff;
     line-height: 1.3em;
