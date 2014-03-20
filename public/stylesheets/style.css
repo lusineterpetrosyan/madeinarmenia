@@ -17,6 +17,14 @@ a {
 color: #ce2d19;
 text-decoration: none;
 }
+ .form {
+ 	width: 60%;
+	height: 312px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin-left: -60%;
+ }
 
 header{
 	height: 312px;
@@ -104,14 +112,6 @@ nav{
 	margin: 13px 0px 13px 0px;
 
 	
- }
- .form {
- 	background-color: red;
-	width: 60%;
-	height: 312px;
-	position: absolute;
-	top: 0px;
-	left: -60%;
  }
 
 

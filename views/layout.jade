@@ -2,9 +2,9 @@ html
 	head
 		title armenia
 		meta(name="viewport", content="width=device-width, initial-scale=1")
-		link(rel='stylesheet', href='/stylesheets/style.css')		
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/style_hover.css')		
 		
-
 	body(id="sss")		
 		header
 			div(class="shade")
@@ -15,30 +15,45 @@ html
 				div(class="joinblock")
 					img(src="/img/check.png")
 					button(class="join") Join Us
-			nav
-				button(class="list") List View
-				button(class="grid") Grid View
+			
 
 			div(id="form" class="form")
-				button(class="close") X
-				h2 Add Company
-				label Company Name: 
-					input(type='text', name='cName')
-				label Email Address:
-					input(type='text', name='email')
-				label Page url:	
-					input(type='text', name='url')
-				label City:
-					input(type='text', name='city')
-				label Founders:
-					input(type='text' class='founder_input' class='input')
-					button(class="add_founder") Add
-					ul(class="founders")
-				form
-					label Logo
-						input(input type="file" name="file" id="file")
-						input(type="submit" name="submit" value="Upload Logo")
-				div(id="logos")
+				div(class="text")
+					p Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. 
+					p Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. 
+					p Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+					
+				div(class="close")
+					img(src="/img/close_ch.png")
+					button(value="close")
+				
+				span(class="hide")
+					h1 Made In Armenia
+					h2 a collection of tech companies made in 
+						span(style="color: #d1d1d1") armenia
+			nav
+				button(class="list") List View
+				button(class="grid") Grid View	
+			
+				//- button(class="close") X
+				//- h2 Add Company
+				//- label Company Name: 
+				//- 	input(type='text', name='cName')
+				//- label Email Address:
+				//- 	input(type='text', name='email')
+				//- label Page url:	
+				//- 	input(type='text', name='url')
+				//- label City:
+				//- 	input(type='text', name='city')
+				//- label Founders:
+				//- 	input(type='text' class='founder_input' class='input')
+				//- 	button(class="add_founder") Add
+				//- 	ul(class="founders")
+				//- form
+				//- 	label Logo
+				//- 		input(input type="file" name="file" id="file")
+				//- 		input(type="submit" name="submit" value="Upload Logo")
+				//- div(id="logos")
 		block content
 
 

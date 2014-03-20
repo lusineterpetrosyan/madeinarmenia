@@ -39,9 +39,9 @@ app.get('/', function(request, response) {
 			"request":"read"
 		}
 	}, function(err, resp, body){  		
-		console.log(body.result[0].title);
+		//console.log(body.result[0].title);
 		response.render(__dirname + '/views/index.jade', {
-		// response.render(__dirname + '/views/index.html', {
+		//response.render(__dirname + '/views/index.html', {
 		    startups: [body.result]
 		});
 
@@ -62,7 +62,7 @@ app.post('/create', function(request, response) {
 	        ,"url": request.body.url
 	        ,"city": request.body.city
 	        ,"founders": request.body.foundersAr
-	        ,"logo": request.body.logo
+	        //,"logo": request.body.logo
 	      }
 	      ,"group": "submission"
 	    }
