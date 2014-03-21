@@ -17,8 +17,9 @@ app.Home = Backbone.View.extend({
     render: function(){
              
     },closeForm: function(e){
-      $(".span").removeClass("hide").delay(1000);
-      $(".join").html("More");                      
+    //  $(".span").removeClass("hide").delay(1000);
+      $(".join").html("More"); 
+      $(".span").fadeIn(1000);                   
       this.$('#form').animate({'margin-left':'-60%'},1000); 
       
         
@@ -29,7 +30,7 @@ app.Home = Backbone.View.extend({
     },openForm: function(e){
         console.log("sss");
         $(".join").html("Apply");
-        $(".span").addClass("hide");
+        $(".span").fadeOut(1000);//.addClass("hide");
         this.$('#form').animate({'margin-left':'0%'},1000, function(){
            // submit = true;
             //console.log("open",submit)
