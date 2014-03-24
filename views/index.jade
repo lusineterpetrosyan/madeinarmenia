@@ -3,12 +3,25 @@ extends layout
 block content
 	article
 		ul
-			for startup in startups
-				for startupIn in startup
-					if(startupIn.group=="startup")
-						li
-							a(href="http://"+startupIn.body.url, target="_blank" class="company")
-								img(src=startupIn.body.logo)
-							a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
-								img(src="/img/hiring.png")
+			li
+				a(href="http://teamable.me/", target="_blank")
+					img(src="/img/teamable-logo.png")
+				a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
+					img(src="/img/hiring.png")
+			li
+				a(href="https://dev-traitsinc.lsq.io/", target="_blank")
+					img(src="/img/trait-logo.png")
+				a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
+					img(src="/img/hiring.png")
+			li
+				a(href="http://dendrite.com/", target="_blank")
+					img(src="/img/dendrite-logo.png")
+				a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
+					img(src="/img/hiring.png")
+			li
+				a(href="http://www.thenest.am//", target="_blank")
+					img(src="/img/nest-logo.png")
+				a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
+					img(src="/img/hiring.png")
+
 					
