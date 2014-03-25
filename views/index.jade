@@ -11,54 +11,14 @@ block content
 								img(src=startupIn.body.logo)
 							a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
 								img(src="/img/hiring.png")
-			//- li
-			//- 	a(href="http://www.thenest.am//", target="_blank" class="company")
-			//- 		img(src="/img/nest.jpg")
-			//- 	a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
-			//- 		img(src="/img/hiring.png")
 
-			//- li
-			//- 	a(href="http://www.dendrite.com/", target="_blank" class="company")
-			//- 		img(src="/img/dendrite.jpg")
-			//- 	a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
-			//- 		img(src="/img/hiring.png")
-
-			//- li(id = "li")
-			//- 	a(href="http://www.teamable.me/", target="_blank" class="company")
-			//- 		img(src="/img/teamable.jpg")
-			//- 	a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
-			//- 		img(src="/img/hiring.png")
-			
-			//- li
-			//- 	a(href="https://dev-traitsinc.lsq.io/", target="_blank" class="company")
-			//- 		img(src="/img/trait.jpg")
-			//- 	a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
-			//- 		img(src="/img/hiring.png")
 	article(id = "listview" style="display: none")
 		ol
 			for startup in startups
 				for startupIn in startup
 					if(startupIn.group=="startup")
 						li
-							a(href="http://"+startupIn.body.url, target="_blank" class="companylist") startupIn.body.title 
+							a(href="http://"+startupIn.body.url, target="_blank" class="companylist")
+								= startupIn.title
 							a(href="http://"+startupIn.body.url, target="_blank")
 								span(style="color: #db3d3d") (hire)
-							
-			//- li
-			//- 	a(href="http://www.thenest.am/" class="companylist") Nest 
-			//- 	a(href="http://www.thenest.am/") (
-			//- 		span(style="color: #db3d3d") hiring
-
-			//- li
-			//- 	a(href="http://dendrite.com/", target="_blank" class="companylist") The Dendrite 
-			//- 		a(href="http://dendrite.com/", target="_blank")  
-			//- 			span(style="color: #db3d3d") (hiring)
-			//- li
-			//- 	a(href="http://teamable.me/", target="_blank" class="companylist") Temable 
-			//- 		a(href="http://teamable.me/")  
-			//- 			span(style="color: #db3d3d") (hiring)
-			//- li
-			//- 	a(href="https://dev-traitsinc.lsq.io/" class="companylist") Traits 
-			//- 		a(href="https://dev-traitsinc.lsq.io/")  
-			//- 			span(style="color: #db3d3d") (hiring)
-			//- 

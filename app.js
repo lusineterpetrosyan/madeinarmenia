@@ -39,7 +39,7 @@ app.get('/', function(request, response) {
 			"request":"read"
 		}
 	}, function(err, resp, body){  		
-		//console.log(body.result[0].title);
+		console.log(body.result[0]);
 		response.render(__dirname + '/views/index.jade', {
 		//response.render(__dirname + '/views/index.html', {
 		    startups: [body.result]
