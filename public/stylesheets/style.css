@@ -70,11 +70,11 @@ nav{
 	top: 287px;
 }
 
-.list{
+.grid{
 	border: 0px;
-	width: 17px;
+	width: 14px;
 	height: 14px;
-	background: url('/img/list.png');
+	background: url('/img/grid.png');
 	display: inline-block;
 	overflow: hidden;
 	text-indent: 999999em;
@@ -82,12 +82,12 @@ nav{
 }
 
 
-.grid{
+.list{
 	margin-left: 8px;
 	border: 0px;
-	width: 14px;
+	width: 17px;
 	height: 14px;
-	background: url('/img/grid.png');
+	background: url('/img/list.png');
 	opacity: 0.4;
 	display: inline-block;
 	overflow: hidden;

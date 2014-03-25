@@ -6,6 +6,8 @@ app.Home = Backbone.View.extend({
         'click .join': 'openForm'
       //,'click .submit': 'submitForm'
       , 'click .clos': 'closeForm'
+      , 'click .grid': 'displayList'
+      , 'click .list': 'displayGrid'
       //, 'submit form': "fileUpload"
       //, 'click .removeImage': "removeImage"
       //, 'click .add_founder': 'add_founder'
@@ -16,6 +18,14 @@ app.Home = Backbone.View.extend({
     },    
     render: function(){
              
+    }, displayGrid: function(){
+        $("#greedview").fadeOut(1000);
+        $("#listview").fadeIn(1000);
+
+    }, displayList: function(){
+        $("#greedview").fadeIn(1000);
+        $("#listview").fadeOut(1000);
+
     },closeForm: function(e){
     //  $(".span").removeClass("hide").delay(1000);
       $(".clos").html("More Info"); 
