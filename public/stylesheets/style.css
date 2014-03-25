@@ -14,17 +14,11 @@ h1,h2,h3,h4,h5,p,button,a,ul,li{
 }
 
 a {
-color: #ce2d19;
-text-decoration: none;
+	cursor: pointer;
+	font-size: 23px;
+	color: #db3d3d;
+	text-decoration: none;
 }
- .form {
- 	width: 60%;
-	height: 312px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	margin-left: -60%;
- }
 
 header{
 	height: 312px;
@@ -44,6 +38,7 @@ header{
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	z-index: 2;
 }
 
 .shade h1{
@@ -71,8 +66,8 @@ header{
 
 nav{
 	position: absolute;
-	right: 12px;
-	top: 11px;
+	right: -57px;
+	top: 287px;
 }
 
 .list{
@@ -93,6 +88,7 @@ nav{
 	width: 14px;
 	height: 14px;
 	background: url('/img/grid.png');
+	opacity: 0.4;
 	display: inline-block;
 	overflow: hidden;
 	text-indent: 999999em;
@@ -102,6 +98,7 @@ nav{
 .joinblock {
 	width: 180px;
 	height: 47px;
+	position: absolute;
 	position: absolute;
 	top: 130px;
 	right: -250px;
@@ -116,6 +113,7 @@ nav{
 
 
 .joinblock button {
+	cursor: pointer;
 	position: absolute;
 	border: solid 1px #a07958;
 	border-radius: 30px;
@@ -125,7 +123,8 @@ nav{
 	width: 150px;
 	height: 47px;
 	color: #fff;
-	font-size: 15px;
+	font-size: 17px;
+	letter-spacing: 1px;
 }
 
 .joinblock button:hover {
@@ -190,12 +189,12 @@ overflow: hidden;
 
 article ul li {
 	text-align: center;
-	line-height: 130px;
+	line-height: 300px;
+
 	position: relative;
 	float: left;
 	max-width: 480px;
 }
-
 /*if statement if screen and min-width equals 1425*/
 @media screen and (max-width: 670px) {
 	article ul li {
@@ -234,4 +233,29 @@ position: absolute;
 .hiring img {
 vertical-align: top;
 display: inline-block;
+}
+
+article {
+	text-align: center;
+}
+
+article ol {
+	list-style-type: decimal;
+	text-align: left;
+	color: #ccc;
+	font-size: 18px;
+	line-height: 2.2em;
+	padding: 35px 10px;
+	margin: 0 auto;
+	width: 500px;
+}
+
+article ol li {
+	padding-left: 10px;
+}
+
+article ol li a {
+	font-size: 18px;
+	color: #7c7c7c;
+	
 }

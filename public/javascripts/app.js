@@ -5,7 +5,7 @@ app.Home = Backbone.View.extend({
     events: {
         'click .join': 'openForm'
       //,'click .submit': 'submitForm'
-      , 'click .close': 'closeForm'
+      , 'click .clos': 'closeForm'
       //, 'submit form': "fileUpload"
       //, 'click .removeImage': "removeImage"
       //, 'click .add_founder': 'add_founder'
@@ -18,11 +18,12 @@ app.Home = Backbone.View.extend({
              
     },closeForm: function(e){
     //  $(".span").removeClass("hide").delay(1000);
-      $(".join").html("More"); 
+      $(".clos").html("More Info"); 
       $(".span").fadeIn(1000);                   
-      this.$('#form').animate({'margin-left':'-60%'},1000); 
-      
-        
+      this.$('#form').animate({'margin-left':'-60%'},1000);
+      $(".clos").addClass("join"); 
+      $(".clos").removeClass("clos");
+             
       // this.$(".submit")
       //   .removeClass("submit")
       //   .addClass("join")            
@@ -36,10 +37,13 @@ app.Home = Backbone.View.extend({
             //console.log("open",submit)
             
         });
+        $(".join").addClass("clos")
+        $(".join").html("Close");
+        $(".join").removeClass("join")
         $(e.currentTarget)
-            //.removeClass("join")
-            //.addClass("submit")
-            //.html("Submit");
+            // .removeClass("join")
+            // .addClass("close")
+            // .html("Close");
     }
 
     // fileUpload : function(e){

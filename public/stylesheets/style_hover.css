@@ -1,14 +1,16 @@
+
+
+
+
 .form{
 
-	letter-spacing: 1px;
 	background-color: rgba(0,0,0,0.3);
-	font-size: 15px;
-	float: right;
 	width: 60%;
-    margin-top: 0px;
-    margin-right: 40px;
-    color: #fff;
-    line-height: 1.3em;
+	height: 312px;
+	position: absolute;
+	z-index: 3;
+	top: 0px;
+	left: 0px;
 }
 
 
@@ -49,7 +51,7 @@
  	width: 70px;
  	height: 35px;
  	left: 10px;
- 	top: 250px;
+ 	top: 277px;
  	border: none;
  }
 
@@ -176,20 +178,32 @@ img.submitblock{
 }
 
 .text {
-	letter-spacing: 1px;
-	font-size: 15px;
+
+	text-align: left;
+	letter-spacing: 0px;
+	font-size: 23px;
 	float: right;
-	width: 650px;
+	width: 670px;
     margin-top: 30px;
-    margin-right: 40px;
+    margin-right: 20px;
     color: #fff;
     line-height: 1.3em;
 
 }
 
-.text p {
+.text ul {
+	margin-bottom: 15px;
+	/*list-style-image: url('./png/point.png');*/
+	list-style-image: url("/img/point.png");
+}
+
+.text ul li {
 	margin-bottom: 20px;
 }
+
+
+
+
 
 /*.add_founder {
 width: 47px;
