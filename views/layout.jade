@@ -2,61 +2,34 @@ html
 	head
 		title armenia
 		meta(name="viewport", content="width=device-width, initial-scale=1")
-		link(rel='stylesheet', href='/stylesheets/style.css')
-		link(rel='stylesheet', href='/stylesheets/style_hover.css')		
+		link(rel='stylesheet', href='/stylesheets/stylesheet.css')
+		//- link(rel='stylesheet', href='/stylesheets/style.css')
+		//- link(rel='stylesheet', href='/stylesheets/style_hover.css')		
 		
-	body(id="sss")		
+	body		
 		header
 			div(class="shade")
-				span(class="span")
-					h1 Made In Armenia
-					h2 a collection of tech companies made in 
-						span( style="color: #d1d1d1") armenia 		
+				div(class="welcomeTextWrap")
+					div(class="welcomeText")
+						h1 Made In Armenia
+						h2 a collection of tech companies made in <i> armenia</i>
 
-				div(class="joinblock")
-					img(src="/img/check.png")
-					button(class="join") More Info
-				nav
-					button(class="grid")
-					button(class="list")
+					button(class="moreInfo open") More Info
+					
+					nav
+						button(class="action_grid active") grid
+						button(class="action_list") list
 							
 			
 
-			div(id="form" class="form" style="margin-left:-60%")
-				div(class="text")
-					ul
-							li Companies in this website  have R&D operations or offices located in Armenia. 
-							li If you meet criteria, submit this form and expect response in a week.
-							li Questions? 
-								a(href="mailto:anna@saryantumanyan.com") Contact us
+			div(class="moreInfoText")
+				p MadeInArmenia.org was created as a resource which can serve as a meeting place for Armenian technology companies. Our members meet several criterias.
+				ul
+					li Product/Service development must be primarily done in Armenia.
+					li They must bear the MadeInArmenia slogon on their corporate or product webpage. 
+						a(href="mailto:anna@saryantumanyan.com") Contact us
 
-					
-				
-				//- span()
-				//- 	h1 Made In Armenia
-				//- 	h2 a collection of tech companies made in 
-				//- 		span(style="color: #d1d1d1") armenia
-				
-			
-				//- button(class="close") X
-				//- h2 Add Company
-				//- label Company Name: 
-				//- 	input(type='text', name='cName')
-				//- label Email Address:
-				//- 	input(type='text', name='email')
-				//- label Page url:	
-				//- 	input(type='text', name='url')
-				//- label City:
-				//- 	input(type='text', name='city')
-				//- label Founders:
-				//- 	input(type='text' class='founder_input' class='input')
-				//- 	button(class="add_founder") Add
-				//- 	ul(class="founders")
-				//- form
-				//- 	label Logo
-				//- 		input(input type="file" name="file" id="file")
-				//- 		input(type="submit" name="submit" value="Upload Logo")
-				//- div(id="logos")
+
 		block content
 
 

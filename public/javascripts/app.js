@@ -3,147 +3,42 @@ var app = app || {};
 app.Home = Backbone.View.extend({
     el: $('body'), 
     events: {
-        'click .join': 'openForm'
-      //,'click .submit': 'submitForm'
-      , 'click .clos': 'closeForm'
-      , 'click .grid': 'displayList'
-      , 'click .list': 'displayGrid'
-      //, 'submit form': "fileUpload"
-      //, 'click .removeImage': "removeImage"
-      //, 'click .add_founder': 'add_founder'
+        'click .moreInfo': 'moreInfo'            
+      , 'click .action_grid': 'displayGrid'
+      , 'click .action_list': 'displayList'      
+
     },
     initialize: function(){
-        _.bindAll(this, 'render', 'openForm',/*'submitForm'*/'closeForm');
+        _.bindAll(this, 'render', 'moreInfo');
         this.render();
     },    
     render: function(){
              
-    }, displayGrid: function(){
-        $("#greedview").fadeOut(1000);
-        $("#listview").fadeIn(1000);
+    }, displayGrid: function(e){
+        $("article ul").addClass("grid").removeClass("list");
 
-    }, displayList: function(){
-        $("#greedview").fadeIn(1000);
-        $("#listview").fadeOut(1000);
+        this.$(".welcomeTextWrap nav button").removeClass("active");
+        $(e.currentTarget).addClass("active");
 
-    },closeForm: function(e){
-    //  $(".span").removeClass("hide").delay(1000);
-      $(".clos").html("More Info"); 
-      $(".span").fadeIn(1000);                   
-      this.$('#form').animate({'margin-left':'-60%'},1000);
-      $(".clos").addClass("join"); 
-      $(".clos").removeClass("clos");
-             
-      // this.$(".submit")
-      //   .removeClass("submit")
-      //   .addClass("join")            
-      //   .html("Join");
-    },openForm: function(e){
-        console.log("sss");
-       // $(".join").html("Close");
-        $(".span").fadeOut(1000);//.addClass("hide");
-        this.$('#form').animate({'margin-left':'0%'},1000, function(){
-           // submit = true;
-            //console.log("open",submit)
-            
-        });
-        $(".join").addClass("clos")
-        $(".join").html("Close");
-        $(".join").removeClass("join")
-        $(e.currentTarget)
-            // .removeClass("join")
-            // .addClass("close")
-            // .html("Close");
+    }, displayList: function(e){
+        $("article ul").addClass("list").removeClass("grid");
+
+        this.$(".welcomeTextWrap nav button").removeClass("active");
+        $(e.currentTarget).addClass("active");
+
+    }, moreInfo: function(e){        
+        if($(e.currentTarget).hasClass("open")){
+            $(e.currentTarget).html("Cose").removeClass("open").addClass("close"); 
+            this.$(".welcomeText").fadeOut(1000);        
+            this.$('.moreInfoText').animate({'margin-left': '0%'}, 1000, function(){});
+        }
+        else{
+            $(e.currentTarget).html("More Info").removeClass("close").addClass("open");
+            this.$('.moreInfoText').animate({'margin-left': '-60%'}, 1000, function(){});
+            this.$(".welcomeText").fadeIn(1000);            
+        }
+
     }
-
-    // fileUpload : function(e){
-                
-    //   e.preventDefault();
-    //   var formData = new FormData(this.$("form")[0]);
-       
-    //   $.ajax({
-    //       url: 'https://dev-madeinyerevan.lsq.io/file/aws/upload',
-    //       type: 'POST',
-    //       data: formData,
-    //       async: false,
-    //       cache: false,
-    //       contentType: false,
-    //       processData: false,
-    //       success: function (returndata) {
-    //         console.log("image upload clicked");
-    //         var returndata = JSON.parse(returndata);
-    //          $("#logos")
-    //           .html('<img src="https://dev-madeinyerevan.lsq.io/file/aws/upload/'+returndata.filepath+'" data-filename="'+returndata.filename+'">')
-    //           .html('<input type="button" class="removeImage">X</input>');
-              
-    //       }
-    //   });
-
-    // },removeImage: function(e){
-    //     e.preventDefault();
-    //     $("#logos").empty();
-    // },,submitForm: function(e){      
-    //     console.log("submit clicked")
-    //     console.log("2",submit);
-    //     var title = $("input[name='cName']").val()
-    //         , email = $("input[name='email']").val()
-    //         , url = $("input[name='url']").val()
-    //         , city = $("input[name='city']").val()
-    //         , logo = ($("#logos img").attr("src"));
-    //         $("input[name='cName']").val('');
-    //         $("input[name='email']").val('');
-    //         $("input[name='url']").val('');
-    //         $("input[name='city']").val('');
-    //         $("#logos").empty();
-            
-    //     var founders = [];
-    //     this.$(".founders li").each(function(){
-    //         founders.push($(this).children("h3").html());
-    //     });
-    //     if((title.length>3)&&(email.length>3)&&(url.length>3)&&(city.length>3)){
-    //         $.when(                                                      
-    //             $.post("/create",
-    //                 {
-    //                     "title":title,
-    //                     "city":city,
-    //                     "email":email,
-    //                     "url":url,
-    //                     "founders":founders,
-    //                     "logo" : logo
-    //                 },  function(data) {
-    //                     console.log(data)
-    //              })
-    //             )
-    //         .then(function() {
-    //             $(e.currentTarget)
-    //                 .removeClass("submit")
-    //                 .addClass("join")            
-    //                 .html("Join");
-    //             $('#form')
-    //                 .delay(2000)
-    //                 .animate({'margin-left':'-60%'},1000);
-    //                 alert("Thanks for submitting")
-    //         });
-
-    //     } else {
-    //         submit=false;
-    //         alert("please complete the form")
-    //     } 
-    // },    
-    // add_founder: function(e){                      
-    //   if (this.$('.founder_input').val().length>2){
-    //       this.$(".founders").append(
-    //           "<li><h3>"+this.$('.founder_input').val()+"</h3><button class='remove_founder'>-</button></li>"
-    //       );
-    //   }
-    //   else{
-    //       this.$('.founder_input').attr("placeholder","please add more shit");
-    //   }
-    //   this.$('.founder_input').val("");            
-    //   this.$(".remove_founder").click(function(){              
-    //       $(this).parent().remove();
-    //   });
-    // }
 
 });
 

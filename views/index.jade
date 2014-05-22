@@ -1,24 +1,12 @@
 extends layout
 
 block content
-	article(id = "greedview")
-		ul
+	article
+		ul(class="grid")
 			for startup in startups
 				for startupIn in startup
-					if(startupIn.group=="startup")
+					if(startupIn.group == "startup")
 						li
-							a(href="http://"+startupIn.body.url, target="_blank" class="company")
-								img(src=startupIn.body.logo)
-							a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank")
-								img(src="/img/hiring.png")
-
-	article(id = "listview" style="display: none")
-		ol
-			for startup in startups
-				for startupIn in startup
-					if(startupIn.group=="startup")
-						li
-							a(href="http://"+startupIn.body.url, target="_blank" class="companylist")
-								= startupIn.title
-							a(href="http://"+startupIn.body.url, target="_blank")
-								span(style="color: #db3d3d") (hire)
+							a(href="http://"+startupIn.body.url, target="_blank", class="company" style="background-image: url("+startupIn.body.logo+")")
+							if(startupIn.group == "startup")	
+								a(href="http://www.20x200.com/jobs/" class="hiring" title="20x200 is hiring" target="_blank") hiring

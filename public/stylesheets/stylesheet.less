@@ -1,0 +1,121 @@
+@import "reset.less";
+
+
+header{
+	height: 312px;
+	width: 100%;
+	background: url("../img/phone.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+
+	.shade{
+		background-color: rgba(0,0,0,0.3);
+		width: 60%;
+		height: 312px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 2;
+		.welcomeTextWrap{
+			.welcomeText{
+				h1{
+					width: 354px;
+					height: 77px;
+					overflow: hidden;
+					text-indent: -999999em;
+					background-image: url("/img/logo.png");
+					position: absolute;
+					top: 100px;
+					right: 70px;
+				}
+
+				h2{
+					position: absolute;
+					top: 200px;
+					right: 70px;
+					color: white;
+					font-size: 20px;
+					font-weight: 300;
+				}
+			}			
+
+			.moreInfo{
+				cursor: pointer;
+				border: solid 1px #a07958;
+				border-radius: 30px;
+				background: none;								
+				width: 150px;
+				height: 47px;
+				color: #fff;
+				font-size: 17px;
+				letter-spacing: 1px;	
+				position: absolute; 
+				right: -200px;		
+				top: 130px;
+				text-indent: 10px;
+				
+
+				&.open{
+					background: url("../img/close_ch.png") no-repeat 18px center;	
+				}
+
+				&.close{
+					background: url("../img/close.png") no-repeat 18px center;	
+				}
+			}
+
+			nav{
+				position: absolute; 
+				right: -90px;		
+				top: 270px;
+				width: 55px;
+				height: 15px;
+
+				button{
+					border: none;
+					width: 14px;
+					height: 14px;
+					display: inline-block;
+					overflow: hidden;
+					text-indent: 999999em;
+					margin-left: 10px;
+					opacity: .6;			
+
+					&.active{
+						opacity: 1;
+					}
+				}
+				.action_grid{					
+					background: url('../img/grid.png');				
+				}	
+				.action_list{					
+					background: url('../img/list.png');					
+				}
+
+			}
+
+		}
+
+	}
+
+	.moreInfoText{
+		margin-left: -60%;
+		width: 60%;
+		background-color: white;
+		
+		p{
+			width: 60%;			
+			margin-left: 20%;
+			display: block;
+		}
+
+		ul{
+			margin-left: 20%;			
+		}
+
+	}
+
+}

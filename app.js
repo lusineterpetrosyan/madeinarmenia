@@ -5,7 +5,10 @@ var express = require('express')
   , path = require('path')
   , _	= require("underscore")
   , req = require('needle')
+  , lessMiddleware = require('less-middleware')
   , app = express();
+
+
 
 // all environments
 app.set('port', process.env.PORT || 5000);
@@ -20,8 +23,8 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('6397EA6158CA269858155B7B842BF'));
 app.use(express.cookieSession());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(lessMiddleware(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 // development only
 if ('development' == app.get('env')) {
@@ -30,7 +33,9 @@ if ('development' == app.get('env')) {
 
 app.get('/', function(request, response) {	
 	
-	// response.render(__dirname + '/views/index.html');
+	var body = [];
+	body.push("result");
+	console.log(body);	
 
 	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
 		  "data":{
@@ -40,11 +45,9 @@ app.get('/', function(request, response) {
 		}
 	}, function(err, resp, body){  		
 		console.log(body.result[0]);
-		response.render(__dirname + '/views/index.jade', {
-		//response.render(__dirname + '/views/index.html', {
+		response.render(__dirname + '/views/index.jade', {		
 		    startups: [body.result]
 		});
-
 	});
 });
 
@@ -76,3 +79,5 @@ app.post('/create', function(request, response) {
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
