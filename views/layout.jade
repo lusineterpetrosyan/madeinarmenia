@@ -1,10 +1,11 @@
 html
 	head
-		title armenia
+		title Made In Armenia
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel='stylesheet', href='/stylesheets/stylesheet.css')
 		//- link(rel='stylesheet', href='/stylesheets/style.css')
-		//- link(rel='stylesheet', href='/stylesheets/style_hover.css')		
+		//- link(rel='stylesheet', href='/stylesheets/style_hover.css')	
+		link(rel="shortcut icon", type="image/ico", href="/favicon.ico")
 		
 	body		
 		header
@@ -12,7 +13,8 @@ html
 				div(class="welcomeTextWrap")
 					div(class="welcomeText")
 						h1 Made In Armenia
-						h2 a collection of tech companies made in <i> armenia</i>
+						h2 a collection of tech companies made in 
+							span Armenia
 
 					button(class="moreInfo open") More Info
 					
@@ -23,11 +25,21 @@ html
 			
 
 			div(class="moreInfoText")
-				p MadeInArmenia.org was created as a resource which can serve as a meeting place for Armenian technology companies. Our members meet several criterias.
-				ul
-					li Product/Service development must be primarily done in Armenia.
-					li They must bear the MadeInArmenia slogon on their corporate or product webpage. 
-						a(href="mailto:anna@saryantumanyan.com") Contact us
+				p(class="text")
+					| Through MadeinArmenia.org, Armenia’s collective digital strenght can be accessed under one recognisable brand.
+					| ‘Made in Armenia’ intends to showcase what Armenia’s tech entrepreneurs have to offer!
+					br 
+					br
+					| Companies in this website 
+					ul
+						li have R&D operations in Armenia, 
+						li they proudly proclaim they are “Made in Armenia”
+						li display the link to our page on their website
+				p If you meet criteria submit  
+					a(href="https://docs.google.com/forms/d/14I8q7VIwqmoxla-Mctyt9P-LMijUE-SDpyaggZn55Bk/viewform" target="_blank" ) this form  
+					| and  we will contact you in 5 days. 
+				p Send your questions, suggestions and comments to 
+					a madeinarm.tech@gmail.com.
 
 
 		block content

@@ -4,7 +4,7 @@
 header{
 	height: 312px;
 	width: 100%;
-	background: url("../img/phone.jpg") no-repeat center center fixed; 
+	background: url("../img/phone.jpg") no-repeat top left; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -34,7 +34,7 @@ header{
 
 				h2{
 					position: absolute;
-					top: 200px;
+					bottom: 20px;
 					right: 70px;
 					color: white;
 					font-size: 20px;
@@ -104,18 +104,152 @@ header{
 	.moreInfoText{
 		margin-left: -60%;
 		width: 60%;
-		background-color: white;
+		background-color: rgba(0, 0, 0, 0.3);
+		height: 100%;
+		color: #FFF;
+		font-size: 18px;
+		line-height: 21px;
+		position: relative;
+		z-index: 2;
 		
 		p{
-			width: 60%;			
-			margin-left: 20%;
+			width: 90%;
 			display: block;
+			margin: 0 auto;
+			padding: 10px;
+		
+			a{
+				color: #D89239;
+				font-size: 18px;
+			}
 		}
 
 		ul{
-			margin-left: 20%;			
+			margin-left: 7%;	
+			list-style-image: url("/img/little-point.png");		
 		}
 
 	}
+}
 
+article{
+
+	.company {
+		max-height: 230px;
+		border: 1px solid #ccc;
+		border-top: 0;
+		margin-left: -1px;
+		height: 227px;
+		display: block;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		&:hover{
+			box-shadow: inset 0 0 12px #e2e2e2;
+			-moz-box-shadow: inset 0 0 12px #e2e2e2;
+			-webkit-box-shadow: inset 0 0 12px #e2e2e2;				
+		}
+
+		img {
+			vertical-align: middle;
+			max-width: 330px;
+			display: inline-block;
+		}
+
+		span{
+			display: none;
+		}
+
+		
+	}
+	ul{
+
+		&.grid{
+
+			li{
+				text-align: center;
+				position: relative;
+				float: left;
+				max-width: 480px;
+				width: 25%;
+
+				@media screen and (max-width: 670px) {
+					width: 100%;
+					max-width: 100%;
+				}
+
+				@media screen and (min-width: 670px) {
+					width: 50%;
+				}
+
+				@media screen and (min-width: 880px) and (max-width : 1500px)  {
+					width: 33.3333333%;
+				}
+
+				@media screen and (min-width: 1500px) {
+					width: 25%;		
+				}
+			}
+		}
+		&.list{
+			list-style-type: decimal;
+			text-align: left;
+			color: #ccc;
+			font-size: 18px;
+			line-height: 2.2em;
+			padding: 35px 10px;
+			margin: 0 auto;
+			width: 500px;
+
+			li{
+
+				a{
+					background-image: none!important;
+					font-size: 18px;
+					color: #7c7c7c;
+					border: none;
+					height: auto;
+
+					&.company{
+
+						&:hover {
+							box-shadow: none;
+							-moz-box-shadow: none;
+							-webkit-box-shadow: none;
+						}
+					}
+					span{
+						display: block;
+					}
+					&.hiring{
+						position: static;
+						background-color: transparent;
+						&:before{
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	.hiring{
+		top: 0;
+		right: 1px;
+		width: 81px;
+		height: 41px;
+		position: absolute;
+		line-height: 38px;
+		color: #ffffff;
+		background-color: #d9d9d9;
+		&:before {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-top: 21px solid transparent;
+			border-right: 25px solid #d9d9d9;
+			border-bottom: 20px solid transparent;
+			margin: 0px 0 0 -36px;
+		}
+	}
 }

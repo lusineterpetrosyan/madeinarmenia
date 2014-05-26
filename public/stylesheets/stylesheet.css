@@ -1,1 +1,355 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}h1,h2,h3,h4,h5,p,button,a,ul,li{font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none}a{cursor:pointer;font-size:23px;color:#db3d3d;text-decoration:none}header{height:312px;width:100%;background:url("../img/phone.jpg") no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;position:relative}header .shade{background-color:rgba(0,0,0,0.3);width:60%;height:312px;position:absolute;top:0px;left:0px;z-index:2}header .shade .welcomeTextWrap .welcomeText h1{width:354px;height:77px;overflow:hidden;text-indent:-999999em;background-image:url("/img/logo.png");position:absolute;top:100px;right:70px}header .shade .welcomeTextWrap .welcomeText h2{position:absolute;top:200px;right:70px;color:white;font-size:20px;font-weight:300}header .shade .welcomeTextWrap .moreInfo{cursor:pointer;border:solid 1px #a07958;border-radius:30px;background:none;width:150px;height:47px;color:#fff;font-size:17px;letter-spacing:1px;position:absolute;right:-200px;top:130px;text-indent:10px}header .shade .welcomeTextWrap .moreInfo.open{background:url("../img/close_ch.png") no-repeat 18px center}header .shade .welcomeTextWrap .moreInfo.close{background:url("../img/close.png") no-repeat 18px center}header .shade .welcomeTextWrap nav{position:absolute;right:-90px;top:270px;width:55px;height:15px}header .shade .welcomeTextWrap nav button{border:none;width:14px;height:14px;display:inline-block;overflow:hidden;text-indent:999999em;margin-left:10px;opacity:.6}header .shade .welcomeTextWrap nav button.active{opacity:1}header .shade .welcomeTextWrap nav .action_grid{background:url('../img/grid.png')}header .shade .welcomeTextWrap nav .action_list{background:url('../img/list.png')}header .moreInfoText{margin-left:-60%;width:60%;background-color:white}header .moreInfoText p{width:60%;margin-left:20%;display:block}header .moreInfoText ul{margin-left:20%}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+a,
+ul,
+li {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+}
+a {
+  cursor: pointer;
+  font-size: 23px;
+  color: #db3d3d;
+  text-decoration: none;
+}
+header {
+  height: 312px;
+  width: 100%;
+  background: url("../img/phone.jpg") no-repeat top left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+header .shade {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 60%;
+  height: 312px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+header .shade .welcomeTextWrap .welcomeText h1 {
+  width: 354px;
+  height: 77px;
+  overflow: hidden;
+  text-indent: -999999em;
+  background-image: url("/img/logo.png");
+  position: absolute;
+  top: 100px;
+  right: 70px;
+}
+header .shade .welcomeTextWrap .welcomeText h2 {
+  position: absolute;
+  bottom: 20px;
+  right: 70px;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+header .shade .welcomeTextWrap .moreInfo {
+  cursor: pointer;
+  border: solid 1px #a07958;
+  border-radius: 30px;
+  background: none;
+  width: 150px;
+  height: 47px;
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 1px;
+  position: absolute;
+  right: -200px;
+  top: 130px;
+  text-indent: 10px;
+}
+header .shade .welcomeTextWrap .moreInfo.open {
+  background: url("../img/close_ch.png") no-repeat 18px center;
+}
+header .shade .welcomeTextWrap .moreInfo.close {
+  background: url("../img/close.png") no-repeat 18px center;
+}
+header .shade .welcomeTextWrap nav {
+  position: absolute;
+  right: -90px;
+  top: 270px;
+  width: 55px;
+  height: 15px;
+}
+header .shade .welcomeTextWrap nav button {
+  border: none;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 999999em;
+  margin-left: 10px;
+  opacity: .6;
+}
+header .shade .welcomeTextWrap nav button.active {
+  opacity: 1;
+}
+header .shade .welcomeTextWrap nav .action_grid {
+  background: url('../img/grid.png');
+}
+header .shade .welcomeTextWrap nav .action_list {
+  background: url('../img/list.png');
+}
+header .moreInfoText {
+  margin-left: -60%;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 21px;
+  position: relative;
+  z-index: 2;
+}
+header .moreInfoText p {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+header .moreInfoText p a {
+  color: #D89239;
+  font-size: 18px;
+}
+header .moreInfoText ul {
+  margin-left: 7%;
+  list-style-image: url("/img/little-point.png");
+}
+article .company {
+  max-height: 230px;
+  border: 1px solid #ccc;
+  border-top: 0;
+  margin-left: -1px;
+  height: 227px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+article .company:hover {
+  box-shadow: inset 0 0 12px #e2e2e2;
+  -moz-box-shadow: inset 0 0 12px #e2e2e2;
+  -webkit-box-shadow: inset 0 0 12px #e2e2e2;
+}
+article .company img {
+  vertical-align: middle;
+  max-width: 330px;
+  display: inline-block;
+}
+article .company span {
+  display: none;
+}
+article ul.grid li {
+  text-align: center;
+  position: relative;
+  float: left;
+  max-width: 480px;
+  width: 25%;
+}
+@media screen and (max-width: 670px) {
+  article ul.grid li {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 670px) {
+  article ul.grid li {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 880px) and (max-width: 1500px) {
+  article ul.grid li {
+    width: 33.3333333%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  article ul.grid li {
+    width: 25%;
+  }
+}
+article ul.list {
+  list-style-type: decimal;
+  text-align: left;
+  color: #ccc;
+  font-size: 18px;
+  line-height: 2.2em;
+  padding: 35px 10px;
+  margin: 0 auto;
+  width: 500px;
+}
+article ul.list li a {
+  background-image: none!important;
+  font-size: 18px;
+  color: #7c7c7c;
+  border: none;
+  height: auto;
+}
+article ul.list li a.company:hover {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+article ul.list li a span {
+  display: block;
+}
+article ul.list li a.hiring {
+  position: static;
+  background-color: transparent;
+}
+article ul.list li a.hiring:before {
+  display: none;
+}
+article .hiring {
+  top: 0;
+  right: 1px;
+  width: 81px;
+  height: 41px;
+  position: absolute;
+  line-height: 38px;
+  color: #ffffff;
+  background-color: #d9d9d9;
+}
+article .hiring:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 21px solid transparent;
+  border-right: 25px solid #d9d9d9;
+  border-bottom: 20px solid transparent;
+  margin: 0px 0 0 -36px;
+}

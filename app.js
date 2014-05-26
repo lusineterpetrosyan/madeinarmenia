@@ -16,7 +16,7 @@ app.set('views', __dirname + '/views');
 // app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'jade');
 // app.use(express.static());
-app.use(express.favicon());
+app.use(express.favicon(path.join(__dirname,'/favicon.ico')));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -65,6 +65,7 @@ app.post('/create', function(request, response) {
 	        ,"url": request.body.url
 	        ,"city": request.body.city
 	        ,"founders": request.body.foundersAr
+	        , "title": request.body.title
 	        //,"logo": request.body.logo
 	      }
 	      ,"group": "submission"
