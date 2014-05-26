@@ -14,7 +14,7 @@ header{
 	.shade{
 		background-color: rgba(0,0,0,0.3);
 		width: 60%;
-		height: 312px;
+		height: 100%;
 		position: absolute;
 		top: 0px;
 		left: 0px;
@@ -27,6 +27,7 @@ header{
 					overflow: hidden;
 					text-indent: -999999em;
 					background-image: url("/img/logo.png");
+					background-repeat: no-repeat;
 					position: absolute;
 					top: 100px;
 					right: 70px;
@@ -39,6 +40,7 @@ header{
 					color: white;
 					font-size: 20px;
 					font-weight: 300;
+					padding-left: 40px;
 				}
 			}			
 
@@ -129,6 +131,16 @@ header{
 			list-style-image: url("/img/little-point.png");		
 		}
 
+	}
+
+	@media screen and (max-width: 1066px) {
+		height: 370px;
+	}
+	@media screen and (max-width: 863px) {
+		height: 390px;
+	}
+	@media screen and (max-width: 677px) {
+		height: 430px;
 	}
 }
 
@@ -248,8 +260,9 @@ article{
 			height: 0;
 			border-top: 21px solid transparent;
 			border-right: 25px solid #d9d9d9;
-			border-bottom: 20px solid transparent;
-			margin: 0px 0 0 -36px;
+			border-bottom: 21px solid transparent;
+			margin: 0 0 0 -35px;
+			border-radius: 3px;
 		}
 	}
 }
