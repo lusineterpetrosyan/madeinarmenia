@@ -35,8 +35,7 @@ app.get('/', function(request, response) {
 	
 	var body = [];
 	body.push("result");
-	console.log(body);	
-
+	
 	req.post('https://dev-madeinyerevan.lsq.io/api/v1/item', {
 		  "data":{
 			"token":"123456",
@@ -44,7 +43,7 @@ app.get('/', function(request, response) {
 			"request":"read"
 		}
 	}, function(err, resp, body){  		
-		console.log(body.result[0]);
+		console.log('body',body.result[0]);
 		response.render(__dirname + '/views/index.jade', {		
 		    startups: [body.result]
 		});

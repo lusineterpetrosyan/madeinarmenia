@@ -215,6 +215,15 @@ article{
 
 			li{
 
+				&>span{
+					display: block;
+
+					a:first-child{
+						display: inline-block;
+						margin-right: 10px;
+					}
+				}
+
 				a{
 					background-image: none!important;
 					font-size: 18px;
@@ -236,8 +245,22 @@ article{
 					&.hiring{
 						position: static;
 						background-color: transparent;
+						color: #db3d3d;
 						&:before{
-							display: none;
+							content: "(";
+							position: absolute;
+							border-top: none;
+							border-right: none;
+							border-bottom: none;
+							margin: 0 0 0 -6px;
+						}
+						&:after{
+							content: ")";
+							position: absolute;
+							border-top: none;
+							border-right: none;
+							border-bottom: none;
+							margin: 0 0 0 2px;
 						}
 					}
 				}
