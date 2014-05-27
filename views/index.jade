@@ -2,7 +2,7 @@ extends layout
 
 block content
 	article
-		ul(class="grid")
+		ul(class="startups grid")
 			for startup in startups
 				for startupIn in startup
 					if(startupIn.group == "startup")

@@ -15,13 +15,13 @@ app.Home = Backbone.View.extend({
     render: function(){
              
     }, displayGrid: function(e){
-        $("article ul").addClass("grid").removeClass("list");
+        $("article ul.startups").addClass("grid").removeClass("list");
 
         this.$(".welcomeTextWrap nav button").removeClass("active");
         $(e.currentTarget).addClass("active");
 
     }, displayList: function(e){
-        $("article ul").addClass("list").removeClass("grid");
+        $("article ul.startups").addClass("list").removeClass("grid");
 
         this.$(".welcomeTextWrap nav button").removeClass("active");
         $(e.currentTarget).addClass("active");
