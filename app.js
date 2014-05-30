@@ -64,7 +64,6 @@ app.post('/create', function(request, response) {
 	        ,"url": request.body.url
 	        ,"city": request.body.city
 	        ,"founders": request.body.foundersAr
-	        , "title": request.body.title
 	        //,"logo": request.body.logo
 	      }
 	      ,"group": "submission"

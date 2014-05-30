@@ -171,6 +171,11 @@ header .shade .welcomeTextWrap .welcomeText h1 {
   top: 100px;
   right: 70px;
 }
+@media screen and (max-width: 830px) {
+  header .shade .welcomeTextWrap .welcomeText h1 {
+    background-size: contain;
+  }
+}
 header .shade .welcomeTextWrap .welcomeText h2 {
   position: absolute;
   bottom: 20px;
@@ -179,6 +184,23 @@ header .shade .welcomeTextWrap .welcomeText h2 {
   font-size: 20px;
   font-weight: 300;
   padding-left: 40px;
+}
+@media screen and (max-width: 830px) {
+  header .shade .welcomeTextWrap .welcomeText h2 {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 830px) {
+  header .shade .welcomeTextWrap .welcomeText {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 65%;
+    display: block;
+  }
 }
 header .shade .welcomeTextWrap .moreInfo {
   cursor: pointer;
@@ -193,13 +215,15 @@ header .shade .welcomeTextWrap .moreInfo {
   position: absolute;
   right: -200px;
   top: 130px;
-  text-indent: 10px;
 }
-header .shade .welcomeTextWrap .moreInfo.open {
-  background: url("../img/close_ch.png") no-repeat 18px center;
-}
-header .shade .welcomeTextWrap .moreInfo.close {
-  background: url("../img/close.png") no-repeat 18px center;
+@media screen and (max-width: 830px) {
+  header .shade .welcomeTextWrap .moreInfo {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    right: 0;
+    top: 0;
+  }
 }
 header .shade .welcomeTextWrap nav {
   position: absolute;
@@ -226,6 +250,82 @@ header .shade .welcomeTextWrap nav .action_grid {
 }
 header .shade .welcomeTextWrap nav .action_list {
   background: url('../img/list.png');
+}
+@media screen and (max-width: 830px) {
+  header .shade .welcomeTextWrap nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  header .shade {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 637px) {
+  header .shade {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 637px) and (max-width: 680px) {
+  header .shade {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 830px) {
+  header .shade {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  header .shade h1 {
+    left: 4%;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 637px) {
+  header .shade h1 {
+    left: 4%;
+  }
+}
+@media screen and (min-width: 637px) and (max-width: 680px) {
+  header .shade h1 {
+    left: 22%;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 830px) {
+  header .shade h1 {
+    left: 26%;
+  }
+}
+@media screen and (max-width: 400px) {
+  header .shade h2 {
+    bottom: 20px;
+    left: 21%;
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 637px) {
+  header .shade h2 {
+    left: 21%;
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 637px) and (max-width: 680px) {
+  header .shade h2 {
+    left: 21%;
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 830px) {
+  header .shade h2 {
+    left: 10%;
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 830px) and (max-width: 880px) {
+  header .shade h2 {
+    right: 70px;
+    font-size: 18px;
+  }
 }
 header .moreInfoText {
   margin-left: -60%;
@@ -254,6 +354,11 @@ header .moreInfoText p a {
 header .moreInfoText ul {
   margin-left: 7%;
   list-style-image: url("/img/little-point.png");
+}
+@media screen and (max-width: 863px) {
+  header .moreInfoText {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 1066px) {
   header {
@@ -300,6 +405,23 @@ article ul.grid li {
   max-width: 480px;
   width: 25%;
 }
+@media screen and (max-width: 400px) {
+  article ul.grid li {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 637px) {
+  article ul.grid li {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 637px) and (max-width: 680px) {
+  article ul.grid li {
+    width: 50%;
+  }
+}
 @media screen and (max-width: 670px) {
   article ul.grid li {
     width: 100%;
@@ -307,6 +429,16 @@ article ul.grid li {
   }
 }
 @media screen and (min-width: 670px) {
+  article ul.grid li {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 830px) {
+  article ul.grid li {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 830px) and (max-width: 880px) {
   article ul.grid li {
     width: 50%;
   }
@@ -395,4 +527,17 @@ article .hiring:before {
   border-bottom: 19px solid transparent;
   margin: 0 0 0 -30px;
   border-radius: 3px;
+}
+.none {
+  display: none!important;
+}
+.moreClose {
+  background: url(/img/close.png) no-repeat;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
 }
