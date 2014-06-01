@@ -43,12 +43,23 @@ app.get('/', function(request, response) {
 			"request":"read"
 		}
 	}, function(err, resp, body){  		
-		console.log('body',body.result[0]);
+		// console.log('body',body.result[0]);
+		// response.render(__dirname + '/views/index.jade', {		
+		//     startups: [body.result]
+		// });
+
+
+
+		resp = body.result;
+		var sorted =_.sortBy(resp, function(o) { return o.title; })
 		response.render(__dirname + '/views/index.jade', {		
-		    startups: [body.result]
+		    startups: [sorted]
 		});
+
 	});
 });
+
+		
 
 app.post('/create', function(request, response) {
 	console.log(request.body);
